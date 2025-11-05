@@ -1,0 +1,27 @@
+{
+    "/test/greeting": {
+      "get": {
+        "summary": "Tester la connexion du serveur",
+        "tags": ["Test"],
+        "responses": {
+          "200": {
+            "description": "Renvoie un message de test",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "greeting": {
+                      "type": "string",
+                      "example": "hello world"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

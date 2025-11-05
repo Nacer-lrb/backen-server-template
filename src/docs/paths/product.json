@@ -1,0 +1,63 @@
+{
+    "/products": {
+      "get": {
+        "summary": "Récupérer la liste des produits",
+        "tags": ["Products"],
+        "responses": {
+          "200": {
+            "description": "Liste des produits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "../components/schemas.json#/Product" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Créer un produit",
+        "tags": ["Products"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "../components/schemas.json#/Product" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Produit créé avec succès" },
+          "400": { "description": "Erreur de validation" }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Récupérer un produit par ID",
+        "tags": ["Products"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Produit trouvé",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "../components/schemas.json#/Product" }
+              }
+            }
+          },
+          "404": { "description": "Produit non trouvé" }
+        }
+      }
+    }
+  }
+  

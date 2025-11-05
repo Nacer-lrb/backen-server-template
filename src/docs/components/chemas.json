@@ -1,0 +1,49 @@
+{
+  "schemas": {
+    "RegisterUser": {
+      "type": "object",
+      "properties": {
+        "firstname": { "type": "string", "example": "Laribi" },
+        "lastname": { "type": "string", "example": "Smith" },
+        "username": { "type": "string", "example": "nacer" },
+        "email": { "type": "string", "example": "nacerr@example.com" },
+        "gender": { "type": "string", "enum": ["male", "female"], "example": "male" },
+        "password": { "type": "string", "example": "Nacer2002@" }
+      },
+      "required": ["firstname", "lastname", "username", "email", "gender", "password"]
+    },
+    "LoginUser": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "example": "nacerr@example.com" },
+        "password": { "type": "string", "example": "Nacer2002@" }
+      },
+      "required": ["email", "password"]
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "example": "609e123abc..." },
+        "firstname": { "type": "string", "example": "Laribi" },
+        "lastname": { "type": "string", "example": "Smith" },
+        "username": { "type": "string", "example": "nacer" },
+        "email": { "type": "string", "example": "nacerr@example.com" },
+        "gender": { "type": "string", "example": "male" },
+        "points": { "type": "integer", "example": 0 },
+        "isEmailVerified": { "type": "boolean", "example": false }
+      }
+    },
+    "Product": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "example": "67456abcd1234" },
+        "name": { "type": "string", "example": "Casque Bluetooth" },
+        "description": { "type": "string", "example": "Casque sans fil haute qualité" },
+        "price": { "type": "number", "example": 99.99 },
+        "stock": { "type": "integer", "example": 120 },
+        "category": { "type": "string", "example": "Audio" }
+      },
+      "required": ["name", "price"]
+    }
+  }
+}
