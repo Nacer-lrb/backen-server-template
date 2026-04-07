@@ -1,10 +1,13 @@
-// here a is like an anlober of our functions and send the error into our error handler 
-const errorCatch = (controller) => async (req , res , next ) => {
-    try {
-    	await controller( req , res ) 
-    } catch (error) {
-    	return next(error)
-    }
-}
+/**
+ * Wrapper pour gérer les erreurs async dans les controllers
+ * @param {Function} controller - Controller Express async
+ */
+const errorCatch = (controller) => async (req, res, next) => {
+  try {
+    await controller(req, res, next);
+  } catch (error) {
+    next(error);
+  }
+};
 
-module.exports= errorCatch
+module.exports = errorCatch;
